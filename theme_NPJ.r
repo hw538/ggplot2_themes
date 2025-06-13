@@ -1,17 +1,18 @@
 library(ggplot2)
 theme_NPJ <- function(linewidth = 0.5,
-                      font_familty = "sans",
+                      font = "sans",
                       axis_label_font_size = 5,
                       axis_title_font_size = 5.5,
                       plot_margin_top = 0.01,
                       plot_margin_right = 0.01,
                       plot_margin_bottom = 0.01, 
                       plot_margin_left = 0.01,
-                      legend_position = "right"
+                      legend_position = "right",
+                      ...
                      ) {
   theme_classic() %+replace%
     theme(
-      text = element_text(family = font_familty),
+      text = element_text(family = font),
       line = element_line(linewidth = linewidth),
       axis.text = element_text(size = axis_label_font_size),
       axis.title = element_text(size = axis_title_font_size),
@@ -26,7 +27,8 @@ theme_NPJ <- function(linewidth = 0.5,
       # plot margin
       plot.margin = margin(plot_margin_top, plot_margin_right, plot_margin_bottom, plot_margin_left, "cm"),
       # legend position
-      legend.position = legend_position
+      legend.position = legend_position,
+      ...
       
     )
 }
