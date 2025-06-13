@@ -6,7 +6,8 @@ theme_NPJ <- function(linewidth = 0.5,
                       plot_margin_top = 0.01,
                       plot_margin_right = 0.01,
                       plot_margin_bottom = 0.01, 
-                      plot_margin_left = 0.01
+                      plot_margin_left = 0.01,
+                      legend_position = "right"
                      ) {
   theme_classic() %+replace%
     theme(
@@ -23,6 +24,9 @@ theme_NPJ <- function(linewidth = 0.5,
       legend.box.margin = margin(0, 0, 0, 0), # The margin around the legend box (unit)
       legend.box.spacing = unit(0, "pt"), # The spacing between the plotting area and the legend box (unit)
       # plot margin
-      plot.margin = margin(plot_margin_top, plot_margin_right, plot_margin_bottom, plot_margin_left, "cm")
+      plot.margin = margin(plot_margin_top, plot_margin_right, plot_margin_bottom, plot_margin_left, "cm"),
+      # legend position
+      legend.position = legend_position
+      
     )
 }
