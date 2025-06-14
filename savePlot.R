@@ -15,5 +15,7 @@ savePlot <- function(
 		height = h,
 		units = u
 	)
-	message("Saved these files: ", paste(filenames, collapse = "\n"))
+	saveRDS(obj, paste0(filename_base, ".rds"))
+	message("Saved these files: ", paste(c(filenames, paste0(filename_base, ".rds")), collapse = "\n"))
+	
 }
